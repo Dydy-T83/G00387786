@@ -1,0 +1,301 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [routerLink]="['/home']"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Marvel Movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button [routerLink]="['/avengers-movies']">Avengers Movies</ion-button>
+  <ion-button [routerLink]="['/marvel-characters']">Marvels Characters</ion-button>
+  <hr width="70%" color="red" align=center>
+
+  <div class="ion-padding">
+    <form novalidate>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked" color="primary">number of Marvel movies you've seen</ion-label>
+          <ion-input [(ngModel)]="seen" name="seen" type="number" required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="primary">number of Marvel movies you've yet to see </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="onCalculate(seen)" type="submit" expand="block">Calculate</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+
+  <ion-card-content>osdls {{yet_tosee}}</ion-card-content>
+
+ 
+  <hr width="70%" color="red" align=center>
+  <ion-title align=center >Phase One</ion-title>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2008</ion-card-subtitle>
+      <ion-card-title><b>Iron Man</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src = 'http://wiki.marvel-world.com/images/3/30/Affiche-film-iron-man.jpg'>
+    <ion-card-content>The movie that kicks off the whole 24-film franchise begins with Tony Stark. And it starts with a bang: When weapons manufacturer Tony Stark is captured in enemy territory, he develops his own super-powered super-suit that sets him on the path to heroism, rather than war profiteering.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8ugaeA-nMTc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2008</ion-card-subtitle>
+      <ion-card-title><b>The Incredible Hulk</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/3/3a/Affiche-film-l-incroyable-hulk.jpg'>
+    <ion-card-content>Even big Marvel fans tend to forget about or discount this one, because the star, Ed Norton, was replaced by Mark Ruffalo for the rest of the series. But yes, it is part of the MCU!</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xbqNb2PFKKA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2010</ion-card-subtitle>
+      <ion-card-title><b>Iron Man 2</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/2/23/Affiche-film-iron-man-2.jpg'>
+    <ion-card-content>With Tony Stark living out in the open as Iron Man, he attracts some dangerous foes — like rival arms dealer Justin Hammer and Russian nemesis Whiplash. Better bring in reinforcements — hey, this movie has the first appearance of Black Widow!</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wKtcmiifycU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2011</ion-card-subtitle>
+      <ion-card-title><b>Thor</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/9/96/Affiche-film-thor.jpg'>
+    <ion-card-content>Thor, who lives a godlike existence on Asgard, gets banished to Earth where he's thrust into a fish-out-of-water love story among the humans. But when an ancient war is reignited and threatens his new home, he must learn how to protect it.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YSC9CjSYvYA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2011</ion-card-subtitle>
+      <ion-card-title><b>Captain America: The First Avenger</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/b/b9/Affiche-film-captain-america-the-first-avenger.jpg'>
+    <ion-card-content>The MCU goes period with this movie, which mostly follows Steve Rogers as he helps the Allies during World War II — with the little help of a serum that makes him strong, fast, and tough. Alan Menken, who's composed most of your favorite Disney songs, even wrote him a little wartime theme song.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/W4DlMggBPvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+ 
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2012</ion-card-subtitle>
+      <ion-card-title><b>The Avengers</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/9/90/Affiche-film-the-avengers.jpg'>
+    <ion-card-content>Once audiences were introduced to Iron Man, Hulk, Captain America, and Thor, the stage was set for their first team-up. In The Avengers, the heroes unite to stop extra-terrestrial beings from destroying New York City. But can they learn to work together?</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eOrNdBpGMv8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ </ion-card>
+
+ <br>
+ <hr width="70%" color="red" align=center>
+ <ion-title align=center>Phase Two</ion-title>
+ 
+ <ion-card >
+  <ion-card-header>
+    <ion-card-subtitle>2013</ion-card-subtitle>
+    <ion-card-title><b>Iron Man 3</b></ion-card-title>
+  </ion-card-header>
+  <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/f/f8/Affiche-film-iron-man-3.jpg'>
+  <ion-card-content>Shane Black, the screenwriter behind movies like Lethal Weapon and The Monster Squad, switches to director-mode for the third installment in the Iron Man franchise, which pits Tony Stark against a threat known as "The Mandarin."</ion-card-content>
+  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ke1Y3P9D0Bc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ </ion-card>
+
+ <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2013</ion-card-subtitle>
+      <ion-card-title><b>Thor: The Dark World</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/0/0d/Affiche-film-thor-le-monde-des-tenebres.jpg'>
+    <ion-card-content>In Thor's second film, he battles Malekith the Dark Elf, and has to forge an unexpected alliance with his brother, Loki (yay!), to defeat him.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/npvJ9FTgZbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card> 
+  
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2014</ion-card-subtitle>
+      <ion-card-title><b>Captain America: The Winter Soldier</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/0/07/Affiche-film-captain-america-le-soldat-de-l-hiver.jpg'>
+    <ion-card-content>Captain America (and a few friends) work to expose a plot at S.H.I.E.L.D., with far-flinging consequences for the rest of the series. The filmmakers say they were influenced by '70s conspiracy movies, like Three Days of the Condor (which also shares a star, Robert Redford, with this film).</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7SlILk2WMTI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card> 
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2014</ion-card-subtitle>
+      <ion-card-title><b>Guardians of the Galaxy</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/4/40/Affiche-film-les-guardiens-de-la-galaxie.jpg'>
+    <ion-card-content>A group of intergalactic misfits come together, led by Peter Quill (aka Star-Lord), to keep a powerful stone out of the wrong hands — all while listening to '70s Lite-FM tunes. When it came out, the soundtrack to this movie also hit No. 1 on the Billboard charts.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/d96cjJhvlMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card> 
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2015</ion-card-subtitle>
+      <ion-card-title><b>Avengers: Age of Ultron</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/c/c7/Affiche-film-avengers-ere-ultron.jpg'>
+    <ion-card-content>Earth’s Mightiest Heroes need to band together once again to stop an A.I. that's hell-bent on destroying all humanity — an A.I. that was created by Tony Stark.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tmeOjFno6Do" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card> 
+ 
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2015</ion-card-subtitle>
+      <ion-card-title><b>Ant-Man</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/0/09/Affiche-film-antman.jpg'>
+    <ion-card-content>Petty thief Scott Lang becomes Ant-Man, who, with his ability to shrink, proves that big heroes can come in tiny packages.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/pWdKf3MneyI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <br>
+  <hr width="70%" color="red" align=center>
+  <ion-title align=center >Phase Three</ion-title>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2016</ion-card-subtitle>
+      <ion-card-title><b>Captain America: Civil War</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/d/d2/Affiche-film-captain-america-civil-war.jpg'>
+    <ion-card-content>If your favorite thing about the MCU is seeing the match-ups between different superheroes and their powers, this movie — about the rift that forms between Captain America and Iron Man after the events of Avengers: Age of Ultron — features one of the best, all-out superhero fights in the whole series.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dKrVegVI0Us" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2016</ion-card-subtitle>
+      <ion-card-title><b>Doctor Strange</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/c/cd/Affiche-film-doctor-strange.jpg'>
+    <ion-card-content>This film chronicles the transformation of a hotshot neurosurgeon into a mystical Sorcerer Supreme in a movie that sometimes looks like the inside of a blacklight poster from a college dorm.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Lt-U_t2pUHI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2017</ion-card-subtitle>
+      <ion-card-title><b>Guardians of the Galaxy Vol. 2</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/6/68/Affiche-teaser-film-les-guardiens-de-la-galaxie-2.jpg'>
+    <ion-card-content>Star-Lord and the rest of the gang — including a Baby Groot! — return for more space adventures, there's a reckoning about what it means to be a family.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wUn05hdkhjM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2017</ion-card-subtitle>
+      <ion-card-title><b>Spider-Man: Homecoming</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/thumb/4/45/Affiche-film-spider-man-homecoming.jpg/718px-Affiche-film-spider-man-homecoming.jpg'>
+    <ion-card-content>Many a Spider-Man have come before (Tobey Maguire, Andrew Garfield) but Spider-Man: Homecoming is the first Spider-Man movie that's officially a part of the MCU (though still not part of Disney+). He's briefly glimpsed in Captain America: Civil War, but here he gets to star in a caper about what it's like to balance superhero duties with high school.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/39udgGPyYMg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2017</ion-card-subtitle>
+      <ion-card-title><b>Thor: Ragnarok</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/2/2c/Thor_Ragnarok-199999-Affiche_Officielle_1.jpg'>
+    <ion-card-content>The God of Thunder heads to a planet where he encounters unexpected things — including his buddy, Hulk. But how will he get back to Asgard to defeat the villain Hela? It was directed by Taika Waititi, who was previously known for directing humorous indies like What We Do in the Shadows, and he brings that comedic sensibility with him. (This will be coming to Disney+ in December 2019.)</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ue80QwXMRHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2018</ion-card-subtitle>
+      <ion-card-title><b>Black Panther</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/e/e4/Affiche-film-black-panther-vo.jpg'>
+    <ion-card-content>Director Ryan Coogler, who revitalized the Rocky franchise with Creed, hopped over to the MCU to create the country of Wakanda, a land that kept itself isolated until a world-spanning threat causes King T'Challa to step up and reach out beyond its borders. (Black Panther will make its way to Disney+ in March 2020.)</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xjDjIWPwcPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2018</ion-card-subtitle>
+      <ion-card-title><b>Avengers: Infinity War</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/5/50/Logo-film-avengers-infinity-war.jpg'>
+    <ion-card-content>Thanos proves why he's the Big Bad villain of the franchise in an epic — and we mean epic — battle that pulls in characters from all corners of the MCU. (Disney+ subscribers can get this movie starting June 2020.)</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6ZfuNTqbHE8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2018</ion-card-subtitle>
+      <ion-card-title><b>Ant-Man and the Wasp</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/f/f2/Affiche-film-antman-et-la-guepe.jpg'>
+    <ion-card-content>The Ant-Man sequel, which follows his further adventures into the Quantum Realm, stays on the lighter side; director Peyton Reed says that one of its big inspirations was the Barbra Streisand comedy What's Up, Doc? (There's a July 2020 date for this one to show up on Disney+.)</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/UUkn-enk2RU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2019</ion-card-subtitle>
+      <ion-card-title><b>Captain Marvel</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/thumb/e/e1/Captain_Marvel_Illustration.jpg/810px-Captain_Marvel_Illustration.jpg'>
+    <ion-card-content>We won't talk about how it took Marvel Studios more than 20 movies to make a woman the title character (except a little). Instead, we'll focus on how Brie Larsen stars as a former Air Force pilot who has to return to Earth in the '90s to tangle with some space aliens.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Z1BCujX3pw8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2019</ion-card-subtitle>
+      <ion-card-title><b>Avengers: Endgame</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/7/71/Avengers_-_Endgame_Illustration.jpg'>
+    <ion-card-content>The culmination of all the groundwork laid by the 21 films that came before it, Avengers: Endgame features all the favorites in an inter-galactic, time-jumping battle to save the world after "The Snap."</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>2019</ion-card-subtitle>
+      <ion-card-title><b>Spider-Man: Far From Home</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src= 'http://wiki.marvel-world.com/images/thumb/6/60/Spider-Man_-_Far_From_Home_Affiche.jpg/808px-Spider-Man_-_Far_From_Home_Affiche.jpg'>
+    <ion-card-content>After all of the chaos of Avengers: Endgame, this smaller story, about Peter Parker's school trip to Europe (which gets upended by villain Mysterio, played by Jake Gyllenhaal), provides a nice denouement.</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Nt9L1jCKGnE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <!--<ion-card *ngFor="let avengersMovies of avengersMoviesData"> //we create an avengersMovies object from avengersMoviesData from the aven...page.ts 
+    <img src="{{avengersMovies.Poster}}"> //thanks to data that we read thanks to JSON formatter, we take the element that we want to print on our page like Poster for the movie picture
+    <ion-card-header>
+    <ion-card-subtitle>{{avengersMovies.Title}}</ion-card-subtitle>
+    <ion-card-title>{{avengersMovies.Year}}</ion-card-title>
+    </ion-card-header>
+    </ion-card>-->
+
+    <!-- <ion-list> -->
+    <!-- <ion-item *ngFor="let movie of movieData">
+    <ion-item-group>
+    <img src="{{movie.Poster}}">
+    <ion-item-divider>
+    <ion-label>{{movie.Title}}</ion-label>
+    </ion-item-divider>
+    <ion-item-divider>
+    <ion-label>{{movie.Year}}</ion-label>
+    </ion-item-divider>
+    </ion-item-group>
+    </ion-item>
+    </ion-list> -->
+    
+</ion-content>

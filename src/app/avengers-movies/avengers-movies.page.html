@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"><!--I would like to use the back button to return at the home page and not at the previous page-->
+      <ion-back-button [routerLink]="['/home']"></ion-back-button>    </ion-buttons>
+    <ion-title>Avengers Movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button small [routerLink]="['/marvel-movies']">Marvel Movies</ion-button>
+  <ion-button [routerLink]="['/marvel-characters']">Marvels Characters</ion-button>
+  <ion-card *ngFor="let avengersMovies of avengersMoviesData"> <!-- we create an avengersMovies object from avengersMoviesData from the aven...page.ts for each movies in the data-->
+    <img src="{{avengersMovies.Poster}}"><!--thanks to data that we read thanks to JSON formatter, we take the element that we want to print on our page like Poster for the movie picture-->
+    <ion-card-header>
+    <ion-card-subtitle>{{avengersMovies.Title}}</ion-card-subtitle><!--we print the title of avengersMovies object -->
+    <ion-card-title>{{avengersMovies.Year}}</ion-card-title>
+    </ion-card-header>
+    </ion-card>
+
+    <!-- <ion-list> -->
+    <!-- <ion-item *ngFor="let movie of movieData">
+    <ion-item-group>
+    <img src="{{movie.Poster}}">
+    <ion-item-divider>
+    <ion-label>{{movie.Title}}</ion-label>
+    </ion-item-divider>
+    <ion-item-divider>
+    <ion-label>{{movie.Year}}</ion-label>
+    </ion-item-divider>
+    </ion-item-group>
+    </ion-item>
+    </ion-list> -->
+    
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [routerLink]="['/home']"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Marvel Characters</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button [routerLink]="['/avengers-movies']">Avengers Movies</ion-button>
+  <ion-button [routerLink]="['/marvel-movies']">Marvel Movies</ion-button>
+  <hr width="70%" color="red" align=center>
+  <ion-title align=center >The first avengers</ion-title>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title><b>{{title1}}</b></ion-card-title><!--String Interpolation-->
+    </ion-card-header>
+    <img width="100%" height="100%" src = 'https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/d/d7/CapAmerica-EndgameProfile.jpg/revision/latest/scale-to-width-down/1000?cb=20190423175339'>
+    <ion-card-content>{{content1}}</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/hmFvWXg4ZQA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+  
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title><b>{{title2}}</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src = 'https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/3/35/IronMan-EndgameProfile.jpg/revision/latest?cb=20190423175213'>
+    <ion-card-content>{{content2}}</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6EdYzbgScOU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title><b>{{title3}}</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src = 'https://cdn.wallpapersafari.com/28/75/KtNV1l.jpg'>
+    <ion-card-content>{{content3}}</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eLKVjCFEpv0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title><b>{{title4}}</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src = 'https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/1/13/Thor-EndgameProfile.jpg/revision/latest/scale-to-width-down/620?cb=20190423174911'>
+    <ion-card-content>{{content4}}</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lf14dn8O7pc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title><b>{{title5}}</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src = 'https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/9/9a/BlackWidow-EndgameProfile.jpg/revision/latest/scale-to-width-down/620?cb=20190423174842'>
+    <ion-card-content>{{content5}}</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1Y9nsYEniq4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title><b>{{title6}}</b></ion-card-title>
+    </ion-card-header>
+    <img width="100%" height="100%" src = 'https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/0/08/HawkeyeRonin-EndgameProfile.jpg/revision/latest/scale-to-width-down/1000?cb=20190423175147'>
+    <ion-card-content>{{content6}}</ion-card-content>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dLk6AHJnTK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-card>
+
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [routerLink]="['/home']"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Favorite Character</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="myCharacter">
+      <ion-item>
+        <ion-label>Captain America</ion-label>
+        <ion-radio value="Captain America"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Iron Man</ion-label>
+        <ion-radio value="Iron Man"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Hulk</ion-label>
+        <ion-radio value="Hulk"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Thor</ion-label>
+        <ion-radio value="Thor"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Black Widow</ion-label>
+        <ion-radio value="Black Widow"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Hawkeye</ion-label>
+        <ion-radio value="Hawkeye"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button (click)="onSave()">Save</ion-button>
+
+
+</ion-content>
