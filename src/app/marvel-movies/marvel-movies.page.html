@@ -22,22 +22,21 @@
         </ion-item>
         <ion-item>
           <ion-label position="stacked" color="primary">number of Marvel movies you've yet to see </ion-label>
+          <ion-content>{{yet_tosee}}</ion-content>
         </ion-item>
       </ion-list>
       <ion-row>
         <ion-col>
-          <ion-button (click)="onCalculate(seen)" type="submit" expand="block">Calculate</ion-button>
+          <ion-button (click)="onCalculate()" type="submit" expand="block">Calculate</ion-button>
         </ion-col>
       </ion-row>
     </form>
+    <hr width="70%" color="red" align=center>
+    <ion-title align=center >Phase One</ion-title>
+
   </div>
 
-  <ion-card-content>osdls {{yet_tosee}}</ion-card-content>
-
- 
-  <hr width="70%" color="red" align=center>
-  <ion-title align=center >Phase One</ion-title>
-
+  
   <ion-card >
     <ion-card-header>
       <ion-card-subtitle>2008</ion-card-subtitle>

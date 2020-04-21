@@ -12,8 +12,16 @@
   <ion-button [routerLink]="['/marvel-characters']">Marvels Characters</ion-button>
   
  <ion-button [routerLink]="['/favorite-character']">Your Favorite Character</ion-button>
- <ion-title align=center>Your favorite character is :</ion-title>
- <ion-title align=center >{{myCharacter}}</ion-title>
+ <div>
+    <p align=center>Your favorite character is :</p>
+ 
+    <p align=center >{{myCharacter}}</p>
+ </div>
+ <br>
+ <ion-button (click)="openFileMethod()">My PDF</ion-button>
+ <ion-button (click)="locationMethod()">My Location</ion-button>
+ <br>
+ {{lat}}, {{long}}
 </ion-content>
 
   <!--<ion-content [fullscreen]="true">

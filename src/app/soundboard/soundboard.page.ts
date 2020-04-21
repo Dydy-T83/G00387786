@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as SoundboardMapping from '../../models/soundboard.mapping';
 // Native
 //import { MediaOriginal, MediaObject } from '@ionic-native/media';
-import { NavController } from '@ionic/angular';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { NavController, NavParams, Platform } from '@ionic/angular';
 @Component({
   selector: 'app-soundboard',
   templateUrl: './soundboard.page.html',
@@ -10,14 +11,46 @@ import { NavController } from '@ionic/angular';
 })
 export class SoundboardPage{
 
- /* private soundboardData: SoundboardMapping.SoundboardMap[];
-  private file: MediaObject;
+ // private soundboardData: SoundboardMapping.SoundboardMap[];
+  //private file: NativeAudio;
+    //this.soundboardData = SoundboardMapping.SoundboardMock;
+    constructor(
+      public navCtrl: NavController, 
+      public navParams: NavParams, 
+      public platform: Platform, 
+      private nativeAudio: NativeAudio) {
+  
+        // The Native Audio plugin can only be called once the platform is ready
+        this.platform.ready().then(() => { 
+            console.log("platform ready");
+  
+            // This is used to unload the track. It's useful if you're experimenting with track locations
+            this.nativeAudio.unload('trackID').then(function() {
+                console.log("unloaded audio!");
+            }, function(err) {
+                console.log("couldn't unload audio... " + err);
+            });
+  
+            // 'trackID' can be anything
+            this.nativeAudio.preloadComplex('trackID', 'assets/audio/test.mp3', 1, 1, 0).then(function() {
+                console.log("audio loaded!");
+            }, function(err) {
+                console.log("audio failed: " + err);
+            });
+        });
+    }
 
-  constructor(public navCtrl: NavController, private media: MediaOriginal) {
-    this.soundboardData = SoundboardMapping.SoundboardMock;
-  }
+    playAudio() {
+      console.log("playing audio");
 
-  public playSound(ressource: string) {
+      this.nativeAudio.play('trackID').then(function() {
+          console.log("playing audio!");
+      }, function(err) {
+          console.log("error playing audio: " + err);
+      });
+}
+
+ /* public playSound(ressource: string) {
     if (this.file) {
       this.file.stop();
       this.file.release();
@@ -25,6 +58,6 @@ export class SoundboardPage{
 
     this.file = this.media.create('./assets/' + ressource);
     this.file.play();
-  }
-*/
+  }*/
+
 }
