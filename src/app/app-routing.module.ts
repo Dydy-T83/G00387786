@@ -15,10 +15,6 @@ const routes: Routes = [
     loadChildren: () => import('./avengers-movies/avengers-movies.module').then( m => m.AvengersMoviesPageModule)
   },
   {
-    path: 'soundboard',
-    loadChildren: () => import('./soundboard/soundboard.module').then( m => m.SoundboardPageModule)
-  },
-  {
     path: 'marvel-characters',
     loadChildren: () => import('./marvel-characters/marvel-characters.module').then( m => m.MarvelCharactersPageModule)
   },

@@ -12,7 +12,7 @@
   <ion-card *ngFor="let avengersMovies of avengersMoviesData"> <!-- we create an avengersMovies object from avengersMoviesData from the aven...page.ts for each movies in the data-->
     <img src="{{avengersMovies.Poster}}"><!--thanks to data that we read thanks to JSON formatter, we take the element that we want to print on our page like Poster for the movie picture-->
     <ion-card-header>
-    <ion-card-subtitle>{{avengersMovies.Title}}</ion-card-subtitle><!--we print the title of avengersMovies object -->
+    <ion-card-subtitle>{{avengersMovies.Title}}</ion-card-subtitle><!--we print the title of avengersMovies object for each movies -->
     <ion-card-title>{{avengersMovies.Year}}</ion-card-title>
     </ion-card-header>
     </ion-card>

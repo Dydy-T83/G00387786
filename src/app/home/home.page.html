@@ -15,13 +15,22 @@
  <div>
     <p align=center>Your favorite character is :</p>
  
-    <p align=center >{{myCharacter}}</p>
+    <p align=center >{{myCharacter}}</p><!--Data storage variable-->
  </div>
  <br>
  <ion-button (click)="openFileMethod()">My PDF</ion-button>
  <ion-button (click)="locationMethod()">My Location</ion-button>
  <br>
  {{lat}}, {{long}}
+ <br>
+ <div>{{batLvl}} %</div>
+ <div>Batterie status :{{batStat}} </div>
+ <br>
+
+ <ion-button (click)="checkBatStatus()">Watch</ion-button>
+ <ion-button (click)="batCheck()">Stop</ion-button>
+
+ <!--{{theModel}}-->
 </ion-content>
 
   <!--<ion-content [fullscreen]="true">
