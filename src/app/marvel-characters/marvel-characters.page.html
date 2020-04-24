@@ -8,16 +8,17 @@
 </ion-header>
 
 <ion-content style='--background: navy ;'>
-  <ion-button type="submit" expand="block" [routerLink]="['/avengers-movies']">Avengers Movies</ion-button>
   <ion-button type="submit" expand="block" [routerLink]="['/marvel-movies']">Marvel Movies</ion-button>
+  <ion-button type="submit" expand="block" [routerLink]="['/avengers-movies']">Avengers Movies</ion-button>
   <br>
+  
   <div>
     <hr width="70%" color="red" align=center>
     <ion-title align=center ><span text-color="my-custom-color">The first avengers</span></ion-title>
   </div>
   <br>
   <!--String Interpolation-->
-  <ion-card >
+  <ion-card>
     <ion-card-header>
       <ion-card-title><b>{{title1}}</b></ion-card-title>
     </ion-card-header>
