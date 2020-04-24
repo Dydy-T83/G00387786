@@ -1,14 +1,15 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style='--background:red;'>
     <ion-buttons slot="start">
       <ion-back-button [routerLink]="['/home']"></ion-back-button>
     </ion-buttons>
-    <ion-title>Favorite Character</ion-title>
+    <ion-title><span text-color="my-custom-color">Favorite Character</span></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content style='--background: navy ;'>
+<br>
+<br>
   <ion-list>
     <ion-radio-group [(ngModel)]="myCharacter">
       <ion-item>
@@ -42,8 +43,8 @@
       </ion-item>
     </ion-radio-group>
   </ion-list>
-
+  
+  <br>
   <ion-button (click)="onSave()">Save</ion-button>
-
 
 </ion-content>

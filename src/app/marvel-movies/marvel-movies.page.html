@@ -1,27 +1,29 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style='--background:red;'>
     <ion-buttons slot="start">
       <ion-back-button [routerLink]="['/home']"></ion-back-button>
     </ion-buttons>
-    <ion-title>Marvel Movies</ion-title>
+    <ion-title><span text-color="my-custom-color">Marvel Movies</span></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button [routerLink]="['/avengers-movies']">Avengers Movies</ion-button>
-  <ion-button [routerLink]="['/marvel-characters']">Marvels Characters</ion-button>
+<ion-content style='--background: navy ;'>
+  <ion-button type="submit" expand="block" [routerLink]="['/avengers-movies']">Avengers Movies</ion-button>
+  <ion-button type="submit" expand="block" [routerLink]="['/marvel-characters']">Marvels Characters</ion-button>
+  
+  <br>
   <hr width="70%" color="red" align=center>
 
   <div class="ion-padding">
     <form novalidate>
       <ion-list>
         <ion-item>
-          <ion-label position="stacked" color="primary">number of Marvel movies you've seen</ion-label>
+          <ion-label position="stacked" color="primary">Marvel movies you've seen</ion-label>
           <ion-input [(ngModel)]="seen" name="seen" type="number" required><!--we enter the number in the "seen" variable that we use in the function inside the service and page.ts-->
           </ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="stacked" color="primary">number of Marvel movies you've yet to see </ion-label>
+          <ion-label position="stacked" color="primary">You've yet to see </ion-label>
           <ion-content>{{yet_tosee}}</ion-content>
         </ion-item>
       </ion-list>
@@ -31,11 +33,13 @@
         </ion-col>
       </ion-row>
     </form>
-    <hr width="70%" color="red" align=center>
-    <ion-title align=center >Phase One</ion-title>
-
   </div>
-
+  <div>
+    <hr width="70%" color="red" align=center>
+    <ion-title align=center > <span text-color="my-custom-color">Phase One </span></ion-title>
+    <br>
+  </div>
+  
   
   <ion-card >
     <ion-card-header>
@@ -96,10 +100,12 @@
     <ion-card-content>Once audiences were introduced to Iron Man, Hulk, Captain America, and Thor, the stage was set for their first team-up. In The Avengers, the heroes unite to stop extra-terrestrial beings from destroying New York City. But can they learn to work together?</ion-card-content>
     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eOrNdBpGMv8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  </ion-card>
-
  <br>
- <hr width="70%" color="red" align=center>
- <ion-title align=center>Phase Two</ion-title>
+ <div>
+  <hr width="70%" color="red" align=center>
+  <ion-title align=center><span text-color="my-custom-color">Phase Two</span></ion-title>
+ </div>
+ <br>
  
  <ion-card >
   <ion-card-header>
@@ -160,11 +166,12 @@
     <ion-card-content>Petty thief Scott Lang becomes Ant-Man, who, with his ability to shrink, proves that big heroes can come in tiny packages.</ion-card-content>
     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/pWdKf3MneyI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </ion-card>
-
   <br>
-  <hr width="70%" color="red" align=center>
-  <ion-title align=center >Phase Three</ion-title>
-
+  <div>
+    <hr width="70%" color="red" align=center>
+    <ion-title align=center ><span text-color="my-custom-color">Phase Three</span></ion-title>
+  </div>
+  <br>
   <ion-card >
     <ion-card-header>
       <ion-card-subtitle>2016</ion-card-subtitle>

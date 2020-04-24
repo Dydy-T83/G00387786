@@ -1,43 +1,35 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style='--background:red;'>
     <ion-title align=center>
-      Marvel Project
+      <span text-color="my-custom-color">Marvel Project</span> 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-button [routerLink]="['/avengers-movies']">Avengers Movies</ion-button><!--button in home page that does the link with the avengers movie page -->
-  <ion-button [routerLink]="['/marvel-movies']">Marvels Movies</ion-button>
-  <ion-button [routerLink]="['/marvel-characters']">Marvels Characters</ion-button>
-  
- <ion-button [routerLink]="['/favorite-character']">Your Favorite Character</ion-button>
- <div>
-    <p align=center>Your favorite character is :</p>
+<ion-content  style='--background: navy ;' [fullscreen]="true">
  
-    <p align=center >{{myCharacter}}</p><!--Data storage variable-->
+  <ion-button type="submit" expand="block" [routerLink]="['/marvel-movies']">Marvels Movies</ion-button><!--button in home page that does the link with the marvel movies page -->
+  <ion-button type="submit" expand="block" [routerLink]="['/marvel-characters']">Marvels Characters</ion-button>
+  <ion-button type="submit" expand="block" [routerLink]="['/avengers-movies']">Avengers Movies</ion-button>
+  <ion-button type="submit" expand="block" [routerLink]="['/favorite-character']">Favorite Character</ion-button>
+
+  <div>
+    <p align=center><span text-color="my-custom-color">Your favorite character is :</span></p>
+ 
+    <p align=center ><span text-color="my-custom-color">{{myCharacter}}</span></p><!--Data storage variable-->
  </div>
- <br>
+ 
  <ion-button (click)="openFileMethod()">My PDF</ion-button>
  <ion-button (click)="locationMethod()">My Location</ion-button>
- <br>
- {{lat}}, {{long}}
- <br>
- <div>{{batLvl}} %</div>
- <div>Batterie status :{{batStat}} </div>
- <br>
-
+ <div>
+ <span text-color="my-custom-color">{{lat}}, {{long}}</span>
+</div>
  <ion-button (click)="checkBatStatus()">Watch</ion-button>
  <ion-button (click)="batCheck()">Stop</ion-button>
 
- <!--{{theModel}}-->
+ <div><span text-color="my-custom-color">The level of batterie is {{batLvl}} %</span></div>
+ <div><span text-color="my-custom-color">Batterie status : {{batStat}}</span> </div>
+ <br>
+
 </ion-content>
 
-  <!--<ion-content [fullscreen]="true">
-    <ul>
-      <li [routerLink]="['/ulster']">Ulster</li>
-      <li [routerLink]="['/munster']">Munster</li>
-      <li [routerLink]="['/connaught']">Connaught</li>
-      <li [routerLink]="['/leinster']">Leinster</li>
-    </ul>
-</ion-content>-->

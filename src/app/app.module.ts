@@ -18,7 +18,7 @@ import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { File } from '@ionic-native/file/ngx';
 // Import the plugin at the top (along with other imports)
 //import { NativeAudio } from '@ionic-native/native-audio';
-import { Device } from '@ionic-native/device/ngx';
+//import { Device } from '@ionic-native/device/ngx';
 import { BatteryStatus } from '@ionic-native/battery-status/ngx';
 
 @NgModule({
@@ -33,7 +33,7 @@ import { BatteryStatus } from '@ionic-native/battery-status/ngx';
     FileOpener,
     DocumentViewer,
     File,
-    Device,
+   // Device,
     BatteryStatus,
    // NativeAudio,
     // MediaOriginal,

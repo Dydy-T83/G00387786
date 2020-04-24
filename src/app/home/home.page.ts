@@ -5,7 +5,7 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { DocumentViewer, DocumentViewerOptions} from '@ionic-native/document-viewer/ngx';
 import { File } from '@ionic-native/file/ngx';
 import {Platform} from '@ionic/angular'
-import { Device } from '@ionic-native/device/ngx';
+//import { Device } from '@ionic-native/device/ngx';
 import { BatteryStatus } from '@ionic-native/battery-status/ngx';
 import {NavController} from '@ionic/angular';
 
@@ -20,20 +20,18 @@ export class HomePage implements OnInit {
   myCharacter:string;
   long:number;
   lat:number;
- // theModel:string;
+  
   batLvl:any;
   batStat:any;
   subscription:any;
   
-   constructor(private storage:Storage,private batteryStatus: BatteryStatus,public navCtrl:NavController,private device: Device,private geolocation:Geolocation,private fileOpener: FileOpener,private document: DocumentViewer,private file: File,private platform:Platform) {}
-  
+   constructor(private storage:Storage,private batteryStatus: BatteryStatus,public navCtrl:NavController,private geolocation:Geolocation,private fileOpener: FileOpener,private document: DocumentViewer,private file: File,private platform:Platform) {}
+  //for the Battery Status plugin i think that works only mobile simulator despite that write on plugin presentation that works in browser
   checkBatStatus(){
-    
-    this.subscription=this.batteryStatus.onChange().subscribe(
-      (status)=>{
-        console.log("enter");
-        console.log(status.level, status.isPlugged);
-        this.batLvl=status.level;
+    this.subscription=this.batteryStatus.onChange().subscribe(//we monitor the battery
+      (status)=>{//status : All events in this plugin return an object with the following properties
+        console.log(status.level, status.isPlugged); //level: The battery charge percentage (0-100). (Number) 
+        this.batLvl=status.level;//isPlugged: A boolean that indicates whether the device is plugged in. (Boolean)
         if(status.isPlugged==true){
           this.batStat='Charging';
         }
@@ -45,8 +43,7 @@ export class HomePage implements OnInit {
   }
 
   batCheck(){
-    console.log("enter2");
-    this.subscription.unsubscribe();
+    this.subscription.unsubscribe();// //we stop to monitor the battery
   }
 
    locationMethod(){
@@ -57,29 +54,23 @@ export class HomePage implements OnInit {
        console.log('Error getting location', error);
      });
   }
-//https://www.youtube.com/watch?v=k2iaGNApM9w
+
   openFileMethod(){
-   let filePath=this.file.applicationDirectory+"www/assets";
-   
+    //here we use the plugin File for all platforms 
+   let filePath=this.file.applicationDirectory+"www/assets";//to read where the file is installed and stock that in string variable
+   //for android we use the plugin File Opener 
    if(this.platform.is('android')){
-     let fakeName=Date.now();
-     this.file.copyFile(filePath,'Mobile_Apps_Project.pdf',this.file.dataDirectory, `${fakeName}.pdf`).then (result => {
-        this.fileOpener.open(result.nativeURL,'application/pdf');
+     let fakeName=Date.now();//Enables basic storage and retrieval of dates and times to stock the fake url to read the pdf on android
+     this.file.copyFile(filePath,'Mobile_Apps_Project.pdf',this.file.dataDirectory, `${fakeName}.pdf`).then (result => {//we past the real pdf in the fake pdf and after we read this fake pdf
+        this.fileOpener.open(result.nativeURL,'application/pdf');//we open and read the pdf
      });
    }
-    else {
+    else { //for iOS and Window we use the plugin View Document
     const options: DocumentViewerOptions = {
       title: 'My PDF'
     };
-    this.document.viewDocument(`${filePath}/Mobile_Apps_Project.pdf`,'application/pdf', options);
+    this.document.viewDocument(`${filePath}/Mobile_Apps_Project.pdf`,'application/pdf', options); // we will open the url (first argument), the type of this file is pdf (second argument) and the option of the document
    }
-    
-   /* this.fileOpener.open('assets/fileText/Mobile_Apps_Project.pdf', 'application/pdf')
-    .then(() => console.log('File is opened'))
-    .catch(e => console.log('Error opening file', e));
-    /*this.fileOpener.showOpenWithDialog('assets/fileText/Mobile_Apps_Project.pdf', 'application/pdf')
-  .then(() => console.log('File is opened'))
-  .catch(e => console.log('Error opening file', e));*/
   }
 
   //every time that you enter in the home page you did that
@@ -91,12 +82,11 @@ export class HomePage implements OnInit {
       }
     ).catch(
       (error)=>{
-        console.log(error);
+        console.log(error);//to print on the console if we catch an error
       }
     );
    }
    ngOnInit(){
-    //var theModel = this.device.platform;
-    //var string = device.manufacturer;
+    
   }
 }
